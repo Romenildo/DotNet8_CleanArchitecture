@@ -1,9 +1,15 @@
+using Projeto.Database.Services;
+
+//configuracao do postgress salvar datetime
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//extensões
+builder.Services.ConfigureDatabaseApp(builder.Configuration);
 
+// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
