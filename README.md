@@ -22,3 +22,11 @@
     - Services - extensão de conecção com o banco de dados PostgreSQL
         - Adicionado a extensão no program.cs
     - Util - Funções uteis para as querys dos repository
+    - Adicionado a conexão string do banco no AppSettings
+4. Geração da migration
+    - Adicionados os pacotes:
+        - Microsoft.EntityFrameworkCore.Design(Database e WebApi)
+        - Microsoft.EntityFrameworkCore.Tools
+    - add-migration Sp02_Criacao_Initial -context AppDbContext
+    - update-database -context AppDbContext
+5.
