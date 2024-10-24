@@ -39,3 +39,5 @@
     - Criação do Fluent Validation para validar no middleware os dados enviados nas requisicoes
     - Criação dos UseCases(falta criar IUseCaseBase)
 6. Criação da camada de WebAPI
+    - Adicionado Controllers
+    - habilitado cors da aplicação
