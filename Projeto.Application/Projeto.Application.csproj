@@ -6,4 +6,22 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UseCases\Shared\Base\" />
+    <Folder Include="UseCases\Shared\Dtos\Cliente\" />
+    <Folder Include="UseCases\Shared\Utils\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Projeto.Database\Projeto.Database.csproj" />
+    <ProjectReference Include="..\Projeto.Model\Projeto.Model.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
 using Projeto.Database.Services;
+using Projeto.Application.Services;
 
 //configuracao do postgress salvar datetime
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
@@ -6,6 +7,7 @@ AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 var builder = WebApplication.CreateBuilder(args);
 
 //extensões
+builder.Services.ConfigureApplicationApp();
 builder.Services.ConfigureDatabaseApp(builder.Configuration);
 
 // Add services to the container.

@@ -29,4 +29,13 @@
         - Microsoft.EntityFrameworkCore.Tools
     - add-migration Sp02_Criacao_Initial -context AppDbContext
     - update-database -context AppDbContext
-5.
+5. Criação da Camada Application (Core)
+    - Adicionados os pacotes:
+        - AutoMapper.Extensions.Microsoft.DependencyInjection
+        - FluentValidation
+        - FluentValidation.AspNetCore
+        - MediatR
+    - Criação do Service extensios para configurar o fluentValidation, mediatR e Automapper no program.cs
+    - Criação do Fluent Validation para validar no middleware os dados enviados nas requisicoes
+    - Criação dos UseCases(falta criar IUseCaseBase)
+6. Criação da camada de WebAPI
