@@ -1,5 +1,10 @@
 # Projeto
 
+Projeto de uma web api em dotnet 8.0, com arquitetura de clean arquiteture.   
+Criação base do projeto para ir implementando as funcionalidades que o .net dispoe:   
+    - Identity - refit - hub - hangfire- closedXML - -jobs - Arquivos - notificacoes- importacoes -EmailSender -
+
+
 1. Criação da arquitetura do Projeto
     - Application
     - Database
