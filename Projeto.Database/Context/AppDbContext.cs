@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Projeto.Model.Entities;
 using System.Reflection;
 
@@ -9,7 +10,7 @@ namespace Projeto.Database.Context;
     -- Microsoft.EntityFrameworkCore
     -- Microsoft.EntityFrameworkCore.Postgress
      */
-public class AppDbContext : DbContext//DbContext é uma classe do entityframeworkcore
+public class AppDbContext : IdentityDbContext//DbContext é uma classe do entityframeworkcore
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 

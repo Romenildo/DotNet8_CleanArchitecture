@@ -1,5 +1,7 @@
 using Projeto.Database.Services;
 using Projeto.Application.Services;
+using Microsoft.AspNetCore.Identity;
+using Projeto.Database.Context;
 
 //configuracao do postgress salvar datetime
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
@@ -9,6 +11,15 @@ var builder = WebApplication.CreateBuilder(args);
 //extensões
 builder.Services.ConfigureApplicationApp();
 builder.Services.ConfigureDatabaseApp(builder.Configuration);
+
+//token jwt
+builder.Services.AddAuthentication();
+builder.Services.AddAuthentication("Bearer").AddJwtBearer();
+
+//identity
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().
+    AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
 
 // Add services to the container.
 builder.Services.AddControllers();

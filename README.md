@@ -46,3 +46,10 @@ Criação base do projeto para ir implementando as funcionalidades que o .net di
 6. Criação da camada de WebAPI
     - Adicionado Controllers
     - habilitado cors da aplicação
+7. Adicionando a Autenticação
+    - Adicionados os pacotes:
+        - Microsoft.AspNetCore.Authentication.JwtBearer
+        - Microsoft.AspNetCore.Identity.EntityFrameworkCore
+    - Configrando o DbCOntext para IdentityDbContext
+    - Configurando o builder Services
+    - Gerando migrations do Identity
