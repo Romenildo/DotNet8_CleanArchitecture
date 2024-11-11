@@ -21,9 +21,11 @@ namespace Projeto.WebApi.Services
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
             var claims = new List<Claim>();
 
-            if (usuario.Cpf != null)
-                claims.Add(new Claim(JwtRegisteredClaimNames.UniqueName, usuario.Cpf));
-
+            if (usuario.Cpf != null) 
+            {
+                claims.Add(new Claim("CPF", usuario.Cpf));
+                claims.Add(new Claim("EMAIL", usuario.Email));
+            }
 
             var token = new JwtSecurityToken(issuer,
               audience,
