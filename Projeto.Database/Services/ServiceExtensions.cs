@@ -6,6 +6,7 @@ using Projeto.Database.Repositories;
 using Projeto.Model.Interfaces.Base;
 using Projeto.Model.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Projeto.WebApi.Services;
 
 /*
  *  Arquivo de extensão para conectar ao banco de dados a partir da webAPi

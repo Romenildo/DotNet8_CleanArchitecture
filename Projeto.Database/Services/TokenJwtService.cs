@@ -1,6 +1,7 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using Projeto.Application.Services;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using Projeto.Model.Entities.Identity;
+using Projeto.Model.Interfaces.Base;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
