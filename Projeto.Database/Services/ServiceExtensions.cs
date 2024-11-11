@@ -28,6 +28,7 @@ public static class ServiceExtensions
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IClienteRepository, ClienteRepository>();
+        services.AddScoped<ITokenJwtService, TokenJwtService>();
     }
 
 }

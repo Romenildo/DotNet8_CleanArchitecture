@@ -46,10 +46,18 @@ Criação base do projeto para ir implementando as funcionalidades que o .net di
 6. Criação da camada de WebAPI
     - Adicionado Controllers
     - habilitado cors da aplicação
+---
+### Identity
 7. Adicionando a Autenticação
     - Adicionados os pacotes:
         - Microsoft.AspNetCore.Authentication.JwtBearer
         - Microsoft.AspNetCore.Identity.EntityFrameworkCore
-    - Configrando o DbCOntext para IdentityDbContext
+    - Configrando o DbContext para IdentityDbContext
     - Configurando o builder Services
-    - Gerando migrations do Identity
+    - Gerando migrations do Identity   
+8. Gerando Jwt Token
+    - Adicionando as informações para gerar o token no appSettings
+    - Alterado Entidade do IdentityUser
+    - Criado os Dtos de login, register e token
+    - Criação do service ITokenService
+    - Geração do Token
