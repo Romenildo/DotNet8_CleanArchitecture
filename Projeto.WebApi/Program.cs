@@ -25,7 +25,8 @@ builder.Services.AddIdentity<Usuario, IdentityRole>().
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+builder.Services.AddSwagger();
 
 var app = builder.Build();
 
