@@ -65,5 +65,38 @@ namespace Projeto.WebApi.Controllers
 
             return Ok();
         }
+
+        [HttpPost("register-role")]
+        public async Task<IActionResult> RegisterRole([FromBody] string roleName, CancellationToken cancellationToken)
+        {
+            var role = new IdentityRole
+            {
+                Name = roleName
+            };
+
+            var result = await _roleManager.CreateAsync(role);
+
+            if (!result.Succeeded)
+                return BadRequest(result.Errors);
+
+            return Ok();
+        }
+
+        public record class AddRoleModel(string Cpf, string RoleName);
+        [HttpPost("add-role")]
+        public async Task<IActionResult> AddRole([FromBody] AddRoleModel request, CancellationToken cancellationToken)
+        {
+            var usuario = await _userManager.FindByNameAsync(request.Cpf!);
+
+            if (usuario is null)
+                return NotFound();
+
+            var result = await _userManager.AddToRoleAsync(usuario, request.RoleName!);
+
+            if (!result.Succeeded)
+                return BadRequest(result.Errors);
+
+            return Ok();
+        }
     }
 }

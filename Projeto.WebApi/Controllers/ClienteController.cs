@@ -20,7 +20,7 @@ namespace Projeto.WebApi.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+
         public async Task<IActionResult> Post([FromBody] CreateClienteRequest request, CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(request, cancellationToken);
@@ -45,6 +45,7 @@ namespace Projeto.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Policy = "Admin")]
         public async Task<IActionResult> Delete([FromRoute] Guid id, CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(new DeleteClienteRequest(id), cancellationToken);
